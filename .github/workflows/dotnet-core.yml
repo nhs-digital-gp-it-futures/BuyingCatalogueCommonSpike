@@ -28,4 +28,4 @@ jobs:
     - name: Add Package Repository Source
       run: dotnet nuget add source https://nuget.pkg.github.com/nhs-digital-gp-it-futures/index.json -n github -u nhs-digital-gp-it-futures -p ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
     - name: Push to GitHub Packages
-      run: dotnet nuget push src\**\*.nupkg --source github
+      run: dotnet nuget push /src/NHSD.BuyingCatalogue.Common.Serilog/bin/Release/NHSD.BuyingCatalogue.Common.Serilog.1.0.2.nupkg --source github
