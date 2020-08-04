@@ -21,11 +21,11 @@ jobs:
       run: dotnet restore
     - name: Run GitVersion
       uses: roryprimrose/rungitversion@v1.0.0
-  with:
-    # "true" to use GitVersion /nofetch, any other value to enable fetch
-    nofetch: "true" # default is false
-    # "true" to use GitVersion /nocache, any other value to enable cache
-    nocache: # default is false
+      with:
+        # "true" to use GitVersion /nofetch, any other value to enable fetch
+        nofetch: "true" # default is false
+        # "true" to use GitVersion /nocache, any other value to enable cache
+        nocache: # default is false
     - name: List variables
       run: printenv | sort
     - name: Build
