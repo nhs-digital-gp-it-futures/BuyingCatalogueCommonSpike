@@ -31,7 +31,7 @@ jobs:
         format: "${major}.${minor}.${patch}-alpha.${increment}"
         # Path to check for changes. If any changes are detected in the path the 'changed' output will true. Enter multiple paths separated by spaces.
         change_path: "src"
-    - name: List variables
+    - name: List environment variables
       run: printenv | sort
     - name: Build
       run: dotnet build --configuration Release --no-restore
