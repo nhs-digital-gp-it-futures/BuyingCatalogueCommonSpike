@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NHSD.BuyingCatalogue.Common.Serilog", "src\NHSD.BuyingCatalogue.Common.Serilog\NHSD.BuyingCatalogue.Common.Serilog.csproj", "{77ABE525-EFDA-4CEF-B7DE-330A256A461A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NHSD.BuyingCatalogue.Common.Serilog.Tests", "test\NHSD.BuyingCatalogue.Common.Serilog.Tests\NHSD.BuyingCatalogue.Common.Serilog.Tests.csproj", "{0EC3D674-2B0E-4795-AF27-1D03338B8797}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77ABE525-EFDA-4CEF-B7DE-330A256A461A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77ABE525-EFDA-4CEF-B7DE-330A256A461A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77ABE525-EFDA-4CEF-B7DE-330A256A461A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77ABE525-EFDA-4CEF-B7DE-330A256A461A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EC3D674-2B0E-4795-AF27-1D03338B8797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EC3D674-2B0E-4795-AF27-1D03338B8797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EC3D674-2B0E-4795-AF27-1D03338B8797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EC3D674-2B0E-4795-AF27-1D03338B8797}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B268104E-AC7F-41D9-AF8A-3195CD48291B}
+	EndGlobalSection
+EndGlobal
