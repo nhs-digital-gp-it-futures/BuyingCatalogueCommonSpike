@@ -19,13 +19,14 @@ jobs:
         dotnet-version: 3.1.301
     - name: Install dependencies
       run: dotnet restore
-    - name: Run GitVersion
-      uses: roryprimrose/rungitversion@v1.0.0
+    - name: GitHub Action to Setup GitVersion
+      uses: StanleyGoldman/setup-gitversion@v1.0.1
       with:
-        # "true" to use GitVersion /nofetch, any other value to enable fetch
-        nofetch: "true" # default is false
-        # "true" to use GitVersion /nocache, any other value to enable cache
-        nocache: # default is false
+        # Version range or exact version of GitVersion to use
+        gitversion-version: 5.x
+        # Whether to run GitVersion
+        run-gitversion: true
+        # Args to run with GitVersion
     - name: List variables
       run: printenv | sort
     - name: Build
