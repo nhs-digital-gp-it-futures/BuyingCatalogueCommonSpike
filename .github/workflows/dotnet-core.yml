@@ -19,7 +19,7 @@ jobs:
         dotnet-version: 3.1.301
     - name: Install dependencies
       run: dotnet restore
-    - uses: actions/setup-gitversion@v1.0.0
+    - uses: actions/setup-gitversion@v1.0.1
       with:
         gitversion-version: 5.1.1
     - run: GitVersion
