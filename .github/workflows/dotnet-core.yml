@@ -21,6 +21,8 @@ jobs:
       run: dotnet restore
     - name: Run GitVersion
       uses: roryprimrose/rungitversion@v1.0.0
+      with:
+        nofetch: true
     - name: List variables
       run: printenv | sort
     - name: Build
