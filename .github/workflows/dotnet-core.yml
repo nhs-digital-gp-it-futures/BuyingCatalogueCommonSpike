@@ -19,14 +19,10 @@ jobs:
         dotnet-version: 3.1.301
     - name: Install dependencies
       run: dotnet restore
-    - name: GitHub Action to Setup GitVersion
-      uses: StanleyGoldman/setup-gitversion@v1.0.1
+    - uses: actions/setup-gitversion@v1.0.0
       with:
-        # Version range or exact version of GitVersion to use
-        gitversion-version: 5.x
-        # Whether to run GitVersion
-        run-gitversion: true
-        # Args to run with GitVersion
+        gitversion-version: 5.1.1
+    - run: GitVersion
     - name: List variables
       run: printenv | sort
     - name: Build
