@@ -25,4 +25,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-
+    - name: Add Package Repository Source
+      run: dotnet nuget add source https://nuget.pkg.github.com/nhs-digital-gp-it-futures/index.json -n github -u nhs-digital-gp-it-futures -p ${{ secrets.GITHUB_TOKEN }}
+    - name: Push to GitHub Packages
+      run: nuget push nupkg\*.nupkg -Source "GPR"
