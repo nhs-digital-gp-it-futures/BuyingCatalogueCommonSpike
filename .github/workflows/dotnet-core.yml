@@ -23,8 +23,6 @@ jobs:
       with:
         # The branch to count commits on
         branch: "master"
-        # The prefix to use to identify tags
-        tag_prefix: "v"
         # A string which, if present in a git commit, indicates that a change represents a major (breaking) change
         major_pattern: "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
         # Same as above except indicating a minor change
