@@ -24,4 +24,4 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal --configuration Release
     - name: Push to GitHub Packages
-      run: dotnet nuget push src\**\*.nupkg -k 84132e56-fcdc-4193-94b8-7710c50fd690 -s https://www.myget.org/F/nuget-testing/api/v2/package --skip-duplicate
+      run: dotnet nuget push src\**\*.nupkg -k ${secrets.MyGetApiKey} -s https://www.myget.org/F/nuget-testing/api/v2/package --skip-duplicate
