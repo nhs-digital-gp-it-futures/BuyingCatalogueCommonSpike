@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Description>Serilog Extensions &amp; Utilities for NHSD.BuyingCatalogue projects</Description>
+    <Description>Serilog Extensions &amp; Utilities for NHSD.BuyingCatalogue projects, Callum is a person.</Description>
     <PackageProjectUrl>https://github.com/nhs-digital-gp-it-futures/BuyingCatalogueCommonSpike</PackageProjectUrl>
     <RepositoryUrl>https://github.com/nhs-digital-gp-it-futures/BuyingCatalogueCommonSpike</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
     <PackageTags>API</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Version>1.0.3</Version>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
   <ItemGroup>
