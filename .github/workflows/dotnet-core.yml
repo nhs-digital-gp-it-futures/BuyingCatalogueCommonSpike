@@ -19,16 +19,8 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
     - name: Run Unit Tests
       run: dotnet test --no-restore --verbosity normal --configuration Release
-  publish:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
     - name: Publish to MyGet
       run: dotnet nuget push src\**\*.nupkg -k ${{ secrets.MyGetApiKey }} -s https://www.myget.org/F/nuget-testing/api/v2/package --skip-duplicate
     
