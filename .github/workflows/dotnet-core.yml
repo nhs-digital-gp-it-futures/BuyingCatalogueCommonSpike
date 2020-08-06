@@ -27,7 +27,7 @@ jobs:
         else
           echo "::set-output name=package_version::oloy"
         fi
-        echo ${{steps.packageVersion.outputs.package_version}}
+    - run: echo "${{steps.packageVersion.outputs.package_version}}"
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
