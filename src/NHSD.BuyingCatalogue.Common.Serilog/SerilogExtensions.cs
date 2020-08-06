@@ -5,6 +5,7 @@ namespace NHSD.BuyingCatalogue.Common.Serilog
 {
     public static class SerilogExtensions
     {
+        // add comment
         public static void ConfigureSerilog(this IApplicationBuilder app)
         {
             app.UseSerilogRequestLogging(opts =>
