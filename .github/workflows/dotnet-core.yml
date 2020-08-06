@@ -31,6 +31,5 @@ jobs:
     - name: Run Unit Tests
       run: dotnet test --no-restore --verbosity normal --configuration Release /p:Version=${{ steps.gitversion.outputs.semVer }}
     - name: Publish to MyGet
-      if: github.ref == 'refs/heads/master'
       run: dotnet nuget push src\**\*.nupkg -k ${{ secrets.MyGetApiKey }} -s https://www.myget.org/F/nuget-testing/api/v2/package --skip-duplicate
     
