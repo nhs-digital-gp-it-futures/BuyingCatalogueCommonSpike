@@ -9,7 +9,7 @@ namespace NHSD.BuyingCatalogue.Common.Serilog
         {
             app.UseSerilogRequestLogging(opts =>
             {
-                opts.GetLevel = SerilogRequestLoggingOptions.GetLevel;
+                optsa.GetLevel = SerilogRequestLoggingOptions.GetLevel;
             });
         }
     }
