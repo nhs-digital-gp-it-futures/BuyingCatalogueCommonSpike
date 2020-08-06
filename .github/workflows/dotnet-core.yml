@@ -19,14 +19,6 @@ jobs:
     - name: Use GitVersion
       id: gitversion # step id used as reference for output values
       uses: gittools/actions/gitversion/execute@v0.9.2
-    - name: Set Version Master
-      if: github.ref == 'refs/heads/master'
-      env: 
-       version: ${{ steps.gitversion.outputs.semVer }}
-    - name: Set Version Feature
-      if: github.ref != 'refs/heads/master'
-      env: 
-       version: ${{ steps.gitversion.outputs.fullSemVer }}
     - run: echo ${{ steps.gitversion.outputs.semVer }}
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
