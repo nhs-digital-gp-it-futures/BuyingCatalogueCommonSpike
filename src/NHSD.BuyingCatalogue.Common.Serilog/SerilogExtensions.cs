@@ -7,7 +7,7 @@ namespace NHSD.BuyingCatalogue.Common.Serilog
     {
         public static void ConfigureSerilog(this IApplicationBuilder app)
         {
-            // adding test comment
+            // should up to 2.0.1-something.2
             app.UseSerilogRequestLogging(opts =>
             {
                 opts.GetLevel = SerilogRequestLoggingOptions.GetLevel;
