@@ -22,7 +22,7 @@ jobs:
     - name: Get Correct Version
       id: packageVersion
       run: |
-        if ("${{github.ref}}" == "refs/heads/master") then
+        if [ "${{github.ref}}" == "refs/heads/master" ]; then
           echo "::set-output name=package_version::yolo"
         else
           echo "::set-output name=package_version::oloy"
