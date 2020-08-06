@@ -30,9 +30,9 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore /p:Version=${{ steps.gitversion.outputs.semVer }}
+      run: dotnet build --configuration Release --no-restore /p:Version=${{ if(github.ref == 'refs/heads/master'), steps.gitversion.outputs.semVer, steps.gitversion.outputs.fullSemVer }}
     - name: Run Unit Tests
-      run: dotnet test --no-restore --verbosity normal --configuration Release /p:Version=${{ steps.gitversion.outputs.semVer }}
+      run: dotnet test --no-restore --verbosity normal --configuration Release /p:Version=${{ if(github.ref == 'refs/heads/master'), steps.gitversion.outputs.semVer, steps.gitversion.outputs.fullSemVer }}
     - name: Publish to MyGet
       run: dotnet nuget push src\**\*.nupkg -k ${{ secrets.MyGetApiKey }} -s https://www.myget.org/F/nuget-testing/api/v2/package --skip-duplicate
     
