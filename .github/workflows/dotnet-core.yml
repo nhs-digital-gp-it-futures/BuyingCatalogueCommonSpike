@@ -23,9 +23,9 @@ jobs:
       id: packageVersion
       run: |
         if [ "${{github.ref}}" == "refs/heads/master" ]; then
-          echo "::set-output name=package_version::yolo"
+          echo "::set-output name=package_version::${{ steps.gitversion.outputs.semVer }}"
         else
-          echo "::set-output name=package_version::oloy"
+          echo "::set-output name=package_version::${{ steps.gitversion.outputs.fullSemVer }}"
         fi
     - run: echo "${{steps.packageVersion.outputs.package_version}}"
     - name: Setup .NET Core
@@ -35,9 +35,9 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore /p:Version=${{ steps.gitversion.outputs.semVer }}
+      run: dotnet build --configuration Release --no-restore /p:Version=${{ steps.packageVersion.outputs.package_version }}
     - name: Run Unit Tests
-      run: dotnet test --no-restore --verbosity normal --configuration Release /p:Version=${{ steps.gitversion.outputs.semVer }}
+      run: dotnet test --no-restore --verbosity normal --configuration Release /p:Version=${{ steps.packageVersion.outputs.package_version }}
     - name: Publish to MyGet
       run: dotnet nuget push src\**\*.nupkg -k ${{ secrets.MyGetApiKey }} -s https://www.myget.org/F/nuget-testing/api/v2/package --skip-duplicate
     
