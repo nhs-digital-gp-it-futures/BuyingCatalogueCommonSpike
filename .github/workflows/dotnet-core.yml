@@ -22,7 +22,7 @@ jobs:
     - name: Get Correct Version
       id: packageVersion
       run: |
-        v = ${{ steps.gitversion.outputs.semVer }}
+        v=${{ steps.gitversion.outputs.semVer }}
         if [ "${{github.ref}}" == "refs/heads/master" ]; then
           echo "::set-output name=package_version::${v}"
         else
