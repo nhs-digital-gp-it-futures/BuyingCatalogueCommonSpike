@@ -22,10 +22,11 @@ jobs:
     - name: Get Correct Version
       id: packageVersion
       run: |
+        v = ${{ steps.gitversion.outputs.semVer }}
         if [ "${{github.ref}}" == "refs/heads/master" ]; then
-          echo "::set-output name=package_version::${{ steps.gitversion.outputs.semVer }}"
+          echo "::set-output name=package_version::$v"
         else
-          echo "::set-output name=package_version::${${{ steps.gitversion.outputs.semVer }}/%1/${{steps.gitversion.outputs.buildMetaData}}}"
+          echo "::set-output name=package_version::${v/%1/${{steps.gitversion.outputs.buildMetaData}}}"
         fi
     - run: echo "${{steps.packageVersion.outputs.package_version}}"
     - name: Setup .NET Core
