@@ -24,7 +24,7 @@ jobs:
       run: |
         v = ${{ steps.gitversion.outputs.semVer }}
         if [ "${{github.ref}}" == "refs/heads/master" ]; then
-          echo "::set-output name=package_version::$v"
+          echo "::set-output name=package_version::${v}"
         else
           echo "::set-output name=package_version::${v/%1/${{steps.gitversion.outputs.buildMetaData}}}"
         fi
